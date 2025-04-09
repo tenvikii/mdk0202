@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Элементы интерфейса</title>
+    <link rel="styleheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Century&display=swap" rel="styleheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Элементы интерфейса</h1>
+
+        <button class="btn">Кнопка</button>
+
+        <div class="radio-group">
+            <label>
+                <input type="radio" name="radio" value="option1"> Радиокнопка 1
+            </label>
+            <label>
+                <input type="radio" name="radio" value="option2"> Радиокнопка 2
+            </label>
+        </div>
+
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox"> Чекбокс
+            </label>
+        </div>
+
+        <select class="dropdown">
+            <option>Выпадающий список</option>
+            <option>Опция 1</option>
+            <option>Опция 2</option>
+        </select>
+
+        <input type="range" min="0" max="100" value="50" class="slider">
+
+        <div class="content-block">
+            <p>Контент блок</p>
+        </div>
+
+        <div class="popup">
+            <p>Popup</p>
+            <button class="close">Закрыть</button>
+        </div>
+
+        <div class="dialog">
+            <p>Диалоговое окно</p>
+            <button class="close">Закрыть</button>
+        </div>
+
+        <div class="gallery">
+            <img src="/home/student/Рабочий стол/Тен 1-оис-23/photo_2025-04-09_10-21-08.jpg" alt="Image 1">
+            <img src="/home/student/Рабочий стол/Тен 1-оис-23/photo_2025-04-09_10-25-35.jpg" alt="Image 2">
+        </div>
+
+        <div class="tooltip">Подсказка
+            <span class="tooltiptext">Это подсказка!</span>
+        </div>
+
+        <input type="text" placeholder="Поисковая строка" class="search-input"
+        id="searchInput">
+        <button class="search-button" onclick="filterMedia()">Поиск</button> <!-- Кнопка поиска -->
+    </div>
+
+        <div class="player">
+            <h2>Видео</h2>
+            <video width="640" height="360" controls>
+          <source src="/home/student/Рабочий стол/Тен 1-оис-23/IMG_5652.mp4" type="video/mp4">
+        </video>
+         <h2>Аудио</h2>
+            <audio controls>
+           <source src="/home/student/Рабочий стол/Тен 1-оис-23/jungkook - still with you.mp3" type="audio/mpeg">
+        </audio>
+        </div>
+
+        <input type="text" placeholder="Имя" class="name-input">
+        <input type="password" placeholder="Пароль" class="password-input">
+        <input type="text" id="phone" placeholder="+7 (___) ___-__-__" class="masked-input" pattern="+7 (d{3}) d{3}-d{2}-d{2}" required> 
+       
+
+        <a href="https://perfect-housewife.ru/season-7/episode-18/"target="_blank">Ссылка на другой веб ресурс</a>
+
+        <a href="#anchor">Якорь</a>
+
+        <div class="tabs">
+            <button class="tab">Вкладка 1</button>
+            <button class="tab">Вкладка 2</button>
+        </div>
+
+        <div class="preloader">Загрузка...</div>
+
+        <div class="pagination">
+            <span class="page-number">1</span>
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+        </div>
+
+        <ul class="list-markers">
+            <li>Первый элемент списка</li>
+            <li>Второй элемент списка</li>
+            <li>Третий элемент списка</li>
+        </ul>
+
+    </div>
+</body>
+</html>
+<style>
+    body {
+    background-color: #D9D9D9;
+    font-family: 'Century', serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #400414;
+}
+
+.btn, .close, .player button, .tab {
+    background-color: #400414;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Century', serif;
+}
+
+.btn:hover, .close:hover, .player button:hover, .tab:hover {
+    opacity: 0.8;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: #400414;
+}
+
+.dropdown {
+    background-color: #400414;
+    color: #FFFFFF;
+}
+
+.slider {
+    width: 100%;
+    
+}
+
+.content-block {
+    background-color: #400414;
+    color: #FFFFFF;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.popup, .dialog {
+    display: none; /* Скрыто по умолчанию */
+    background-color: #400414;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #400414;
+    color: #FFFFFF;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.search-input, .name-input, .password-input, .masked-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.page-number {
+    margin-right: 10px;
+}
+
+.list-markers {
+    list-style-type: disc; /* Маркеры списка */
+}
+
+.preloader {
+    display: none; /* Скрыто по умолчанию */
+}
+.search-button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #400414; /* Цвет кнопки */
+            color: white; /* Цвет текста на кнопке */
+            font-family: 'Century', sans-serif; /* Применяем шрифт к кнопке */
+            border: none; /* Убираем рамку */
+          
+        }
+        .search-button:hover {
+            opacity: 0.8;
+        }
+</style>
